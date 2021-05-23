@@ -1,0 +1,22 @@
+<div class='main'>
+<p>test2 works!</p>
+<h1 class="headings">Salary Calculater</h1>
+<h2>Enter Your ID</h2>
+<input  type='text' #box><br>
+<button (click)="insertion(box.value)" class="button">What my designation</button>
+<!--<p>{{currentvalue}}</p>-->
+
+
+<container-element [ngSwitch]=box.value>
+    <!-- the same view can be shown in more than one case -->
+    <h2 *ngSwitchCase=1000>You are CEO</h2>
+    <button (click)="ceo(box.value)" class="button" *ngSwitchCase=1000>Calculate Salary</button>
+    <h2 *ngSwitchCase=1000>{{currentvalue1}}</h2>
+    <h2 *ngSwitchCase=2000>You are manager</h2>
+    <button (click)="manager(box.value)" class="button" *ngSwitchCase=2000>Calculate Salary</button>
+    <h2 *ngSwitchCase=2000>{{currentvalue1}}</h2>
+    <!--default case when there are no matches -->
+    <some-element *ngSwitchDefault></some-element>
+  </container-element>
+
+</div>
